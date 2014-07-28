@@ -12,23 +12,69 @@ namespace ExportBlog.Service
         string url = null;
 
         Regex reg_title = new Regex(@"");
+        Regex reg_title2 = new Regex(@"");
         Regex reg_con = new Regex(@"");
 
         WebUtility web = null;
 
-        IList<FeedEntity> IFeedService.GetList()
+        public CsdnService(string un)
         {
-            throw new NotImplementedException();
+            url = "";
+            web = new WebUtility();
+        }
+        
+        IList<FeedEntity> GetList()
+        {
+            var list = new List<FeedEntity>();
+            int p = 0;
+            for (int i = 1; i < 1000; i++)
+            {
+                if (p > 0 && i > p) break;
+                web.URL = string.Format(url, i);
+                string html = web.Get();
+                if (p == 0)
+                {
+                    var mp = Regex.Match(html, @"");
+                    if (mp.Success) p = App.ToInt(mp.Groups[1].Value);
+                    else p = 1;
+                }
+                var mats = reg_title.Match(html);
+                if (mats.Count == 0) break;
+                foreach (Match mat in mats)
+                {
+                   
+                }
+            }
         }
 
-        bool IFeedService.GetContent(ref FeedEntity entity)
+        public bool GetContent(ref FeedEntity entity)
         {
-            throw new NotImplementedException();
+            web.URL = entity.Url;
+            string html = web.Get();
+            Match mat = reg_con.Match(html);
+            if (mat.Success)
+            {
+                entity.Content = mat.Groups[1].Value.Trim();
+            }
+            return mat.Success;
         }
 
-        FeedEntity IFeedService.GetEntity(string url)
+        public FeedEntity GetEntity(string url)
         {
-            throw new NotImplementedException();
+            var entity = new FeedEntity();
+            web.URL = url;
+            string html = web.Get();
+            Match mat = reg_title2.Match(html);
+            if (mat.Success)
+            {
+                entity.Title = mat.Groups[1].Value.Trim();
+            }
+            mat = reg_con.Match(html);
+            if (mat.Success)
+            {
+                entity.Content = mat.Groups[1].Value.Trim();
+            }
+            return entity;
         }
     }
 }
