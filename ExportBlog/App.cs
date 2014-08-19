@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.ComponentModel;
 
 namespace ExportBlog
 {
@@ -26,7 +27,7 @@ namespace ExportBlog
         public static string GetDescription(Enum cur)
         {
             var fi = cur.GetType().GetField(cur.ToString());
-            var da = ()Attribute.GetCustomAttribute(f1, typeof());
+            var da = (DescriptionAttribute)Attribute.GetCustomAttribute(fi, typeof(DescriptionAttribute));
             return da!=null?da.Description:cur.ToString();
         }
 
@@ -54,8 +55,10 @@ namespace ExportBlog
     public enum Format
     {
         CHM = 1,
-        PDF = 2
-
+        PDF = 2,
+        HTML = 4,
+        TXT = 8,
+        EPUB = 16,
     }
 
 }

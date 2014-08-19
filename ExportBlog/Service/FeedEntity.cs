@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace ExportBlog.Service
 {
@@ -26,7 +27,25 @@ namespace ExportBlog.Service
     }
     public enum Source
     {
-        //[Description("CSDN")]
-        csdn
+        [Description("博客园")]
+        cnblogs = 1,
+        [Description("ITEYE")]
+        iteye,
+        [Description("新浪")]
+        sina,
+        [Description("搜狐")]
+        sohu,
+        [Description("和讯")]
+        hexun,
+        [Description("ChinaUnix")]
+        chinaunix,
+        [Description("网易")]
+        _163,
+        [Description("51CTO")]
+        _51cto,
+        [Description("CSDN")]
+        csdn,
+        [Description("开源中国")]
+        oschina,
     }
 }
