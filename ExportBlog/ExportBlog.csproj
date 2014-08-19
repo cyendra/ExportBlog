@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CsdnService.cs" />
     <Compile Include="Service\FeedEntity.cs" />
+    <Compile Include="Service\FeedService.cs" />
     <Compile Include="Service\IFeedService.cs" />
     <Compile Include="WebUtility.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
