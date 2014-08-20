@@ -307,7 +307,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+           // this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.chk1_chm);
             this.panel1.Controls.Add(this.chk1_epub);
@@ -366,7 +366,7 @@
             // 
             this.label8.Font = new System.Drawing.Font("微软简中圆", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
+            //this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label8.Location = new System.Drawing.Point(7, 19);
             this.label8.Name = "label8";
@@ -389,12 +389,12 @@
             // 
             // imageList1
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            //this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "btn-close.gif");
-            this.imageList1.Images.SetKeyName(1, "btn-close-hover.gif");
-            this.imageList1.Images.SetKeyName(2, "btn-min.gif");
-            this.imageList1.Images.SetKeyName(3, "btn-min-hover.gif");
+           // this.imageList1.Images.SetKeyName(0, "btn-close.gif");
+           // this.imageList1.Images.SetKeyName(1, "btn-close-hover.gif");
+           // this.imageList1.Images.SetKeyName(2, "btn-min.gif");
+           // this.imageList1.Images.SetKeyName(3, "btn-min-hover.gif");
             // 
             // linkLabel2
             // 
@@ -413,7 +413,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            //this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(640, 500);
             this.Controls.Add(this.linkLabel2);
@@ -424,7 +424,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.textBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "博客导出工具";
