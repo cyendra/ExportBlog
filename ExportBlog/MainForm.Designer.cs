@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.chk1_htm = new System.Windows.Forms.CheckBox();
             this.chk1_pdf = new System.Windows.Forms.CheckBox();
             this.chk1_chm = new System.Windows.Forms.CheckBox();
@@ -54,9 +53,6 @@
             this.chk1_txt = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -66,7 +62,6 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // chk1_htm
@@ -109,7 +104,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SimSun", 10F);
+            this.label1.Font = new System.Drawing.Font("宋体", 10F);
             this.label1.Location = new System.Drawing.Point(113, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 14);
@@ -118,8 +113,6 @@
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gray;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
             this.textBox2.Location = new System.Drawing.Point(0, 260);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -156,7 +149,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("SimSun", 10F);
+            this.label9.Font = new System.Drawing.Font("宋体", 10F);
             this.label9.Location = new System.Drawing.Point(368, 37);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 14);
@@ -176,7 +169,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.button1.Location = new System.Drawing.Point(489, 25);
             this.button1.Name = "button1";
@@ -201,7 +194,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button2.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.button2.Location = new System.Drawing.Point(489, 25);
             this.button2.Name = "button2";
@@ -214,7 +207,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(12, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 16);
@@ -247,7 +240,7 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button3.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.button3.Location = new System.Drawing.Point(489, 25);
             this.button3.Name = "button3";
@@ -260,7 +253,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("SimSun", 10F);
+            this.label4.Font = new System.Drawing.Font("宋体", 10F);
             this.label4.Location = new System.Drawing.Point(368, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 14);
@@ -270,7 +263,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("SimSun", 10F);
+            this.label3.Font = new System.Drawing.Font("宋体", 10F);
             this.label3.Location = new System.Drawing.Point(12, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(259, 14);
@@ -307,7 +300,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-           // this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.chk1_chm);
             this.panel1.Controls.Add(this.chk1_epub);
@@ -322,7 +314,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label7.Location = new System.Drawing.Point(12, 11);
             this.label7.Name = "label7";
@@ -330,43 +322,10 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "导出格式:";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 476);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(640, 24);
-            this.panel2.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 7F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(521, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 12);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "sqzhuyi@gmail.com";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 7F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(4, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 12);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Copyright @2012 CSDN.NET";
-            // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("微软简中圆", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            //this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label8.Location = new System.Drawing.Point(7, 19);
             this.label8.Name = "label8";
@@ -377,7 +336,6 @@
             // 
             // linkLabel1
             // 
-            this.linkLabel1.ImageIndex = 2;
             this.linkLabel1.ImageList = this.imageList1;
             this.linkLabel1.Location = new System.Drawing.Point(574, 2);
             this.linkLabel1.Name = "linkLabel1";
@@ -389,16 +347,12 @@
             // 
             // imageList1
             // 
-            //this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-           // this.imageList1.Images.SetKeyName(0, "btn-close.gif");
-           // this.imageList1.Images.SetKeyName(1, "btn-close-hover.gif");
-           // this.imageList1.Images.SetKeyName(2, "btn-min.gif");
-           // this.imageList1.Images.SetKeyName(3, "btn-min-hover.gif");
             // 
             // linkLabel2
             // 
-            this.linkLabel2.ImageIndex = 0;
             this.linkLabel2.ImageList = this.imageList1;
             this.linkLabel2.Location = new System.Drawing.Point(606, 2);
             this.linkLabel2.Name = "linkLabel2";
@@ -412,19 +366,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            //this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(640, 500);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.textBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "博客导出工具";
@@ -439,8 +387,6 @@
             this.tabPage3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,9 +412,6 @@
         private System.Windows.Forms.CheckBox chk1_txt;
         private System.Windows.Forms.CheckBox chk1_epub;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
