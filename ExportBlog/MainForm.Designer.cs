@@ -96,7 +96,7 @@
             // 
             // tbUser
             // 
-            this.tbUser.Location = new System.Drawing.Point(268, 34);
+            this.tbUser.Location = new System.Drawing.Point(266, 34);
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(96, 21);
             this.tbUser.TabIndex = 1;

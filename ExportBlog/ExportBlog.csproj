@@ -69,6 +69,12 @@
     <Compile Include="ArticleListForm.Designer.cs">
       <DependentUpon>ArticleListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExForm.Designer.cs">
+      <DependentUpon>ExForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FolderDialog.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -86,6 +92,9 @@
     <Compile Include="WebUtility.cs" />
     <EmbeddedResource Include="ArticleListForm.resx">
       <DependentUpon>ArticleListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExForm.resx">
+      <DependentUpon>ExForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
