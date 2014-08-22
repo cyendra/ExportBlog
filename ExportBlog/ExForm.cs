@@ -83,11 +83,11 @@ namespace ExportBlog
                 }), string.Empty);
                 column_btn.Invoke(new SetText(delegate(string s)
                 {
-                    blog_btn.Enabled = true;
+                    column_btn.Enabled = true;
                 }), string.Empty);
                 url_btn.Invoke(new SetText(delegate(string s)
                 {
-                    blog_btn.Enabled = true;
+                    url_btn.Enabled = true;
                 }), string.Empty);
             });
             thd.Start();
@@ -194,5 +194,33 @@ namespace ExportBlog
 
         #endregion
 
+        #region events
+        private void blog_btn_Click(object sender, EventArgs e)
+        {
+            StartExport();
+        }
+
+        private void column_btn_Click(object sender, EventArgs e)
+        {
+            StartExport();
+        }
+
+        private void url_btn_Click(object sender, EventArgs e)
+        {
+            StartExport();
+        }
+        #endregion
+
+    }
+    public class Input
+    {
+        public Input()
+        {
+            Status = false;
+        }
+        public Type Type { get; set; }
+        public string Text { get; set; }
+        public Format Format { get; set; }
+        public bool Status { get; set; }
     }
 }

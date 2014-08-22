@@ -39,11 +39,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbColumn = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.url_btn = new System.Windows.Forms.Button();
             this.url_label = new System.Windows.Forms.Label();
             this.tbUrl = new System.Windows.Forms.TextBox();
             this.logBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.blog_tabControl.SuspendLayout();
             this.exTabPage.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -65,6 +65,7 @@
             // exTabPage
             // 
             this.exTabPage.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.exTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.exTabPage.Controls.Add(this.blog_btn);
             this.exTabPage.Controls.Add(this.label1);
             this.exTabPage.Controls.Add(this.tbUser);
@@ -85,6 +86,7 @@
             this.blog_btn.TabIndex = 2;
             this.blog_btn.Text = "导 出";
             this.blog_btn.UseVisualStyleBackColor = true;
+            this.blog_btn.Click += new System.EventHandler(this.blog_btn_Click);
             // 
             // label1
             // 
@@ -106,6 +108,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage2.Controls.Add(this.column_btn);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
@@ -126,6 +129,7 @@
             this.column_btn.TabIndex = 5;
             this.column_btn.Text = "导 出";
             this.column_btn.UseVisualStyleBackColor = true;
+            this.column_btn.Click += new System.EventHandler(this.column_btn_Click);
             // 
             // label4
             // 
@@ -157,6 +161,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.url_btn);
             this.tabPage3.Controls.Add(this.url_label);
@@ -168,6 +173,15 @@
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "指定文章";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(56, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 12);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "回车分割多个URL";
+            // 
             // url_btn
             // 
             this.url_btn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -178,6 +192,7 @@
             this.url_btn.TabIndex = 8;
             this.url_btn.Text = "导 出";
             this.url_btn.UseVisualStyleBackColor = true;
+            this.url_btn.Click += new System.EventHandler(this.url_btn_Click);
             // 
             // url_label
             // 
@@ -207,15 +222,6 @@
             this.logBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.logBox.Size = new System.Drawing.Size(640, 215);
             this.logBox.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 12);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "回车分割多个URL";
             // 
             // ExForm
             // 
