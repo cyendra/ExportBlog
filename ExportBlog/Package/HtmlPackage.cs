@@ -82,7 +82,7 @@ namespace ExportBlog.Package
             }
             sb.Append("</ol>");
             string content2 = htmlString.Replace("{0}", this._title).Replace("\n{1}", sb.ToString());
-            CreateFile(baseDir + "_index.htm", content2);
+            CreateFile(baseDir + "index.htm", content2);
         }
         private void Build2()
         {
@@ -102,8 +102,7 @@ namespace ExportBlog.Package
 
                 string fileName = GetFileName(entity.Title) + ".htm";
 
-                sb.AppendFormat("<li><a href='{0}'>{1}</a></li>"
-                    , fileName, entity.Title);
+                sb.AppendFormat("<li><a href='{0}'>{1}</a></li>", fileName, entity.Title);
 
                 string content = htmlString.Replace("{0}", entity.Title).Replace("\n{1}", entity.Content);
                 CreateFile(baseDir + fileName, content);
@@ -112,7 +111,7 @@ namespace ExportBlog.Package
             }
             sb.Append("</ol>");
             string content2 = htmlString.Replace("{0}", this._title).Replace("\n{1}", sb.ToString());
-            CreateFile(baseDir + "_index.htm", content2);
+            CreateFile(baseDir + "index.htm", content2);
         }
 
         #region helper
@@ -140,14 +139,14 @@ namespace ExportBlog.Package
 <title>{0}</title>
 <meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
 <style type=""text/css"">
-body {font:normal 12px/24px Arial, Helvetica, sans-serif; background:#D9F0DB;}
+body {font:normal 12px/24px Arial, Helvetica, sans-serif; background:#e8e8ff;}
 textarea,pre {font-family:Courier; font-size:12px;}
 </style>
 </head>
 <body>
-<p><a href='_index.htm'>&lt;&lt;目录</a></p>
+<p><a href='index.htm'>&lt;&lt;目录</a></p>
 {1}
-<p><a href='_index.htm'>&lt;&lt;目录</a></p>
+<p><a href='index.htm'>&lt;&lt;目录</a></p>
 </body>
 </html>";
         #endregion

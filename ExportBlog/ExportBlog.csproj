@@ -63,12 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="ArticleListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ArticleListForm.Designer.cs">
-      <DependentUpon>ArticleListForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ExForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +70,12 @@
       <DependentUpon>ExForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FolderDialog.cs" />
+    <Compile Include="ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Package\HtmlPackage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,11 +84,11 @@
     <Compile Include="Service\FeedService.cs" />
     <Compile Include="Service\IFeedService.cs" />
     <Compile Include="WebUtility.cs" />
-    <EmbeddedResource Include="ArticleListForm.resx">
-      <DependentUpon>ArticleListForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ExForm.resx">
       <DependentUpon>ExForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

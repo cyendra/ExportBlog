@@ -47,7 +47,7 @@ namespace ExportBlog
 
             if (put.Type == Type.Blog)
             {
-                ArticleListForm frm = new ArticleListForm(fs);
+                ListForm frm = new ListForm(fs);
                 if (frm.ShowDialog() != DialogResult.OK)
                 {
                     return;

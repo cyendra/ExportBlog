@@ -16,7 +16,7 @@ namespace ExportBlog
 
         public DialogResult DisplayDialog()
         {
-            return DisplayDialog("请选择一个文件夹");
+            return DisplayDialog("导出博客到...");
         }
         public DialogResult DisplayDialog(string description)
         {
