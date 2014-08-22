@@ -232,7 +232,7 @@
             this.Controls.Add(this.logBox);
             this.MaximizeBox = false;
             this.Name = "ExForm";
-            this.Text = "Zinthos牌CSDN博客导出器";
+            this.Text = "简易CSDN博客导出器";
             this.Load += new System.EventHandler(this.ExForm_Load);
             this.blog_tabControl.ResumeLayout(false);
             this.exTabPage.ResumeLayout(false);

@@ -12,13 +12,13 @@ namespace ExportBlog.Service
         string url = null;
         Regex reg_title = new Regex(@"<span class=""link_title""><a href=""(.+?)"">([^<]+?)</a></span>", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         Regex reg_con = new Regex(@"<div id=""article_content"" class=""article_content"">([\s\S]+)</div>\s*<!-- Baidu Button BEGIN -->", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        String site = "http://blog.csdn.net/";
 
         WebUtility web = null;
 
         public CsdnService(string un)
         {
-            url = "http://blog.csdn.net/" + un + "/article/list/{0}?viewmode=contents";
-
+            url = site + un + "/article/list/{0}?viewmode=contents";
             web = new WebUtility();
         }
 
@@ -27,9 +27,8 @@ namespace ExportBlog.Service
             var list = new List<FeedEntity>();
 
             int p = 0;
-            for (int i = 1; i < 1000; i++)
+            for (int i = 1; p == 0 || i <= p; i++)
             {
-                if (p > 0 && i > p) break;
                 web.URL = string.Format(url, i);
                 string html = web.Get();
                 if (p == 0)
@@ -43,9 +42,8 @@ namespace ExportBlog.Service
                 foreach (Match mat in mats)
                 {
                     var fd = new FeedEntity();
-                    fd.Url = "http://blog.csdn.net" + mat.Groups[1].Value;
+                    fd.Url = site + mat.Groups[1].Value;
                     fd.Title = mat.Groups[2].Value.Trim();
-
                     list.Add(fd);
                 }
             }

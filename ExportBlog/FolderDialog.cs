@@ -6,7 +6,7 @@ using System.Windows.Forms.Design;
 
 namespace ExportBlog
 {
-    public class FolderDialog : FolderNameEditor
+    public class FolderDialog : FolderNameEditor, IDisposable
     {
         FolderBrowser fDialog = new FolderBrowser();
 
@@ -29,7 +29,25 @@ namespace ExportBlog
         }
         ~FolderDialog()
         {
-            fDialog.Dispose();
+            // Finalizer calls Dispose(false)
+            Dispose(false);
         }
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (fDialog != null)
+                {
+                    fDialog.Dispose();
+                    fDialog = null;
+                }
+            }
+        }
+
     }
 }

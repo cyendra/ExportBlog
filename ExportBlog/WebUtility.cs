@@ -255,7 +255,7 @@ namespace ExportBlog
             finally
             {
                 bw.Close();
-                fs.Close();
+                //fs.Close();
             }
         }
         #endregion
@@ -340,7 +340,7 @@ namespace ExportBlog
                     sb.Append((char)c);
                     c = reader.Read();
                 }
-                reader.Close();
+                //reader.Close();
                 if (Callback != null)
                 {
                     Callback(sb.ToString().Trim());

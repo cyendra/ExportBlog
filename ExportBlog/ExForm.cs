@@ -166,9 +166,8 @@ namespace ExportBlog
             int p = 0;
             WebUtility web = new WebUtility();
             web.Encode = Encoding.UTF8;
-            for (int i = 1; ; i++)
+            for (int i = 1; p == 0 || i <= p; i++)
             {
-                if (p > 0 && i > p) break;
                 web.URL = string.Format(url, i);
                 string html = web.Get();
                 if (p == 0)

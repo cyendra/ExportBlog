@@ -31,7 +31,7 @@ namespace ExportBlog
             return da!=null?da.Description:cur.ToString();
         }
 
-        static Regex reg_unicode = new Regex(@"", RegexOptions.IgnoreCase|RegexOptions.Compiled);
+        static Regex reg_unicode = new Regex(@"\\u[a-f0-9]{4}", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         public static string UtoGB(string str)
         {
             Match mat = reg_unicode.Match(str);

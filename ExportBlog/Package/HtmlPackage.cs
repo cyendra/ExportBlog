@@ -128,7 +128,8 @@ namespace ExportBlog.Package
             {
                 writer.Write(content);
             }
-            fs.Dispose();
+           
+            //fs.Dispose();
         }
         #endregion
 
