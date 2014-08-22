@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ExportBlog.App" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAIAAAAAAAAAAAAAAAEAgAAACAAAE=</HashCode>
+      <FileName>App.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.ExForm" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="ExportBlog.ExForm.SetText" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ExForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ARCCAAIAAGAAYBAIQAGAECACEAAQACAAAAAQIAAAQBA=</HashCode>
+      <FileName>ExForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.Input" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAgAAAAAAQAACAAAAAA=</HashCode>
+      <FileName>ExForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.FolderDialog" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAACAAAAIAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FolderDialog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ExportBlog.ListForm" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="ExportBlog.ListForm.SetItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ListForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEACAAAAAAAACAAAIaAAAAQAAAAAAAAAEIAiI=</HashCode>
+      <FileName>ListForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.Program" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.WebUtility" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="ExportBlog.WebUtility.WebCallback" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>WebUtility.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAEEAAACBABAFIAGACAACQCCQIgJAMCAAYAAAAQAA=</HashCode>
+      <FileName>WebUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.Package.HtmlPackage" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAIAAAAQAAAwAAAAAQQAAiAAQAAACACAAAAg=</HashCode>
+      <FileName>Package\HtmlPackage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.Properties.Resources" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.Properties.Settings" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.Service.CsdnService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAABAAAMABAAAAAAAIAAAAACAAAAAAAAI=</HashCode>
+      <FileName>Service\CsdnService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ExportBlog.Service.FeedEntity" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAEAAAAAAAAAAAAAAAAAACAEAAAAAAAA=</HashCode>
+      <FileName>Service\FeedEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExportBlog.Service.FeedService" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAQGAAAAAAAAI=</HashCode>
+      <FileName>Service\FeedService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ExportBlog.Service.IFeedService" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAACAAAAAAAAI=</HashCode>
+      <FileName>Service\IFeedService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ExportBlog.Type" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAABAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>App.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ExportBlog.Format" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAEBACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ExportBlog.Service.Source" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEIABAgAAIAAAAKAAABAAAAAAIgAAAAAA=</HashCode>
+      <FileName>Service\FeedEntity.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

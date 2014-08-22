@@ -208,8 +208,21 @@ namespace ExportBlog
         {
             StartExport();
         }
+        private void tbUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                StartExport();
+            }
+        }
+        private void tbColumn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                StartExport();
+            }
+        }
         #endregion
-
     }
     public class Input
     {

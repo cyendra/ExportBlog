@@ -36,10 +36,12 @@ namespace ExportBlog.Package
         private void Init(bool getList)
         {
             baseDir += _fileName;
+            /*
             if (Directory.Exists(baseDir))
             {
                 Directory.Delete(baseDir, true);
             }
+            */
             Directory.CreateDirectory(baseDir);
             baseDir += "\\";
 
@@ -71,17 +73,34 @@ namespace ExportBlog.Package
                 _callback("获取文章 " + (cnt - i) + "/" + cnt + "：" + entity.Title);
 
                 string fileName = GetFileName(entity.Title) + ".htm";
-
-                sb.AppendFormat("<li><a href='{0}'>{1}</a></li>", fileName, entity.Title);
-
-                if (feedService.GetContent(ref entity))
+                string cate;
+                if (feedService.GetContent(ref entity, out cate))
                 {
                     string content = htmlString.Replace("{0}", entity.Title).Replace("\n{1}", entity.Content);
-                    CreateFile(baseDir + fileName, content);
+                    if (cate != "")
+                    {
+                        //cate = cate.Replace("\\", "").Replace("/", "").Replace(":","").Replace("*","").Replace("\"","").Replace("?","").Replace(">","").Replace("<","").Replace("|","");
+                        cate = GetFileName(cate);
+                        DirectoryInfo dr = new DirectoryInfo(baseDir + cate);
+                        if (dr.Exists==false)
+                        {
+                            dr.Create();
+                        }
+                        sb.AppendFormat("<li><a href='{0}'>{1}</a></li>", cate + "\\" + fileName, entity.Title);
+                        content = content.Replace("{3}", "..\\");
+                        CreateFile(baseDir + cate + "\\" + fileName, content);
+                    }
+                    else 
+                    {
+                        content = content.Replace("{3}", "");
+                        sb.AppendFormat("<li><a href='{0}'>{1}</a></li>", fileName, entity.Title);
+                        CreateFile(baseDir + fileName, content);
+                    }
+
                 }
             }
             sb.Append("</ol>");
-            string content2 = htmlString.Replace("{0}", this._title).Replace("\n{1}", sb.ToString());
+            string content2 = htmlString.Replace("{0}", this._title).Replace("\n{1}", sb.ToString()).Replace("{3}","");
             CreateFile(baseDir + "index.htm", content2);
         }
         private void Build2()
@@ -104,7 +123,7 @@ namespace ExportBlog.Package
 
                 sb.AppendFormat("<li><a href='{0}'>{1}</a></li>", fileName, entity.Title);
 
-                string content = htmlString.Replace("{0}", entity.Title).Replace("\n{1}", entity.Content);
+                string content = htmlString.Replace("{0}", entity.Title).Replace("\n{1}", entity.Content).Replace("{3}","");
                 CreateFile(baseDir + fileName, content);
 
                 _callback("已获取文章 " + i + "/" + cnt + "：" + entity.Title);
@@ -128,7 +147,7 @@ namespace ExportBlog.Package
             {
                 writer.Write(content);
             }
-           
+
             //fs.Dispose();
         }
         #endregion
@@ -145,9 +164,9 @@ textarea,pre {font-family:Courier; font-size:12px;}
 </style>
 </head>
 <body>
-<p><a href='index.htm'>&lt;&lt;目录</a></p>
+<p><a href='{3}index.htm'>&lt;&lt;目录</a></p>
 {1}
-<p><a href='index.htm'>&lt;&lt;目录</a></p>
+<p><a href='{3}index.htm'>&lt;&lt;目录</a></p>
 </body>
 </html>";
         #endregion

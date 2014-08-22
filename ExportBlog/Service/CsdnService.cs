@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-
+using System.IO;
 namespace ExportBlog.Service
 {
     internal class CsdnService : IFeedService
@@ -12,6 +12,7 @@ namespace ExportBlog.Service
         string url = null;
         Regex reg_title = new Regex(@"<span class=""link_title""><a href=""(.+?)"">([^<]+?)</a></span>", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         Regex reg_con = new Regex(@"<div id=""article_content"" class=""article_content"">([\s\S]+)</div>\s*<!-- Baidu Button BEGIN -->", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        Regex reg_cate = new Regex(@"<span class=""link_categories"">\s*分类：\s*<a.+?>([^<]+?)</a>", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         String site = "http://blog.csdn.net/";
 
         WebUtility web = null;
@@ -50,7 +51,7 @@ namespace ExportBlog.Service
             return list;
         }
 
-        public bool GetContent(ref FeedEntity entity)
+        public bool GetContent(ref FeedEntity entity,out string cate)
         {
             web.URL = entity.Url;
             string html = web.Get();
@@ -59,6 +60,13 @@ namespace ExportBlog.Service
             {
                 entity.Content = mat.Groups[1].Value.Trim();
             }
+            Match matc = reg_cate.Match(html);
+            string res = "";
+            if (matc.Success)
+            {
+                res = matc.Groups[1].Value.Trim();
+            }
+            cate = res;
             return mat.Success;
         }
 
@@ -79,6 +87,14 @@ namespace ExportBlog.Service
                 entity.Content = mat.Groups[1].Value.Trim();
             }
             return entity;
+        }
+        public string GetCategory(string url)
+        {
+            string res = "";
+            web.URL = url;
+            string html = web.Get();
+  
+            return res;
         }
     }
 }

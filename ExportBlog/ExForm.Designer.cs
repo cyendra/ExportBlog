@@ -104,6 +104,7 @@
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(96, 21);
             this.tbUser.TabIndex = 1;
+            this.tbUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUser_KeyPress);
             // 
             // tabPage2
             // 
@@ -157,6 +158,7 @@
             this.tbColumn.Name = "tbColumn";
             this.tbColumn.Size = new System.Drawing.Size(93, 21);
             this.tbColumn.TabIndex = 3;
+            this.tbColumn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbColumn_KeyPress);
             // 
             // tabPage3
             // 
