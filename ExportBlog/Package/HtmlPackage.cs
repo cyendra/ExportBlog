@@ -11,6 +11,13 @@ namespace ExportBlog.Package
 {
     public class HtmlPackage
     {
+
+        Regex reg_code1 = new Regex(@"(<(pre|textarea) [^>]+?>)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        Regex reg_code2 = new Regex(@"(</(pre|textarea))>", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        Regex reg_img = new Regex(@"<img[^>]+?src=['""]([^>]+?)['""][^>]+?>", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        Regex reg_br = new Regex(@"<(/p|/div|br[\s/]*)>[\r\n]*?", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        Regex reg_html = new Regex(@"<.+?>", RegexOptions.Compiled);
+
         string baseDir = App.BaseDirectory;
         Encoding encode = Encoding.GetEncoding("UTF-8");//gb18030
         string _fileName;
@@ -77,6 +84,16 @@ namespace ExportBlog.Package
                 if (feedService.GetContent(ref entity, out cate))
                 {
                     string content = htmlString.Replace("{0}", entity.Title).Replace("\n{1}", entity.Content);
+                    var mats = reg_img.Matches(content);
+                    int count = mats.Count;
+                    int cas = 0;
+                
+                    foreach(Match mat in mats)
+                    {
+                        cas++;
+                        _callback("下载图片 " + cas + "/" + count);
+                        feedService
+                    }
                     if (cate != "")
                     {
                         //cate = cate.Replace("\\", "").Replace("/", "").Replace(":","").Replace("*","").Replace("\"","").Replace("?","").Replace(">","").Replace("<","").Replace("|","");
