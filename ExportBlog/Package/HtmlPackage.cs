@@ -12,11 +12,7 @@ namespace ExportBlog.Package
     public class HtmlPackage
     {
 
-        Regex reg_code1 = new Regex(@"(<(pre|textarea) [^>]+?>)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        Regex reg_code2 = new Regex(@"(</(pre|textarea))>", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        Regex reg_img = new Regex(@"<img[^>]+?src=['""]([^>]+?)['""][^>]+?>", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        Regex reg_br = new Regex(@"<(/p|/div|br[\s/]*)>[\r\n]*?", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        Regex reg_html = new Regex(@"<.+?>", RegexOptions.Compiled);
+
 
         string baseDir = App.BaseDirectory;
         Encoding encode = Encoding.GetEncoding("UTF-8");//gb18030
@@ -81,18 +77,17 @@ namespace ExportBlog.Package
 
                 string fileName = GetFileName(entity.Title) + ".htm";
                 string cate;
-                if (feedService.GetContent(ref entity, out cate))
+                if (feedService.GetContent(ref entity))
                 {
                     string content = htmlString.Replace("{0}", entity.Title).Replace("\n{1}", entity.Content);
-                    var mats = reg_img.Matches(content);
-                    int count = mats.Count;
+                    cate=entity.Cate;
                     int cas = 0;
-                
-                    foreach(Match mat in mats)
+           
+                    foreach(var img in entity.Images)
                     {
                         cas++;
-                        _callback("下载图片 " + cas + "/" + count);
-                        feedService
+                        _callback("下载图片 " + cas + "/" + entity.Images.Count);
+                        
                     }
                     if (cate != "")
                     {

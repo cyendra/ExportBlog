@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.IO;
+using System.Drawing;
 
 namespace ExportBlog.Service
 {
@@ -13,16 +15,21 @@ namespace ExportBlog.Service
         public string Title { get; set; }
         public string Content { get; set; }
         public bool IsDown { get; set; }
+        public string Cate { get; set; }
+        public List<Image> Images { get; set; }
         public FeedEntity()
         {
             Content = string.Empty;
             IsDown = true;
+            Images = new List<Image>();
         }
         public void Dispose()
         {
             Url = null;
             Title = null;
             Content = null;
+            Cate = null;
+            Images = null;
         }
     }
     public enum Source

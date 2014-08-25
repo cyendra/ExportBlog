@@ -19,7 +19,7 @@ namespace ExportBlog.Service
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        bool GetContent(ref FeedEntity entity,out string cate);
+        bool GetContent(ref FeedEntity entity);
 
         /// <summary>
         /// 通过文章url获取内容

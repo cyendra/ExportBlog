@@ -48,16 +48,13 @@ namespace ExportBlog.Service
             }
             return _list;
         }
-        public bool GetContent(ref FeedEntity entity,out string cate)
+        public bool GetContent(ref FeedEntity entity)
         {
-            if (entity.Content != string.Empty)
-            {
-                cate = "";
-                return true;
-            }
+            if (entity.Content != string.Empty) return true;
+            
             System.Threading.Thread.Sleep(50);
 
-            return service.GetContent(ref entity,out cate);
+            return service.GetContent(ref entity);
         }
 
         public FeedEntity GetEntity(string url)
