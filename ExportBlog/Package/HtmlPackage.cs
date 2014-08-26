@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
 using ExportBlog.Service;
+using System.Drawing;
 
 namespace ExportBlog.Package
 {
@@ -81,14 +82,7 @@ namespace ExportBlog.Package
                 {
                     string content = htmlString.Replace("{0}", entity.Title).Replace("\n{1}", entity.Content);
                     cate=entity.Cate;
-                    int cas = 0;
-           
-                    foreach(var img in entity.Images)
-                    {
-                        cas++;
-                        _callback("下载图片 " + cas + "/" + entity.Images.Count);
-                        
-                    }
+                    string finalpath = "";
                     if (cate != "")
                     {
                         //cate = cate.Replace("\\", "").Replace("/", "").Replace(":","").Replace("*","").Replace("\"","").Replace("?","").Replace(">","").Replace("<","").Replace("|","");
@@ -100,20 +94,49 @@ namespace ExportBlog.Package
                         }
                         sb.AppendFormat("<li><a href='{0}'>{1}</a></li>", cate + "\\" + fileName, entity.Title);
                         content = content.Replace("{3}", "..\\");
+                        
+                        finalpath=baseDir + cate + "\\" + GetFileName(entity.Title);
+                        CreateImage(ref entity, ref content, finalpath);
                         CreateFile(baseDir + cate + "\\" + fileName, content);
                     }
                     else 
                     {
                         content = content.Replace("{3}", "");
                         sb.AppendFormat("<li><a href='{0}'>{1}</a></li>", fileName, entity.Title);
+                        finalpath=baseDir + GetFileName(entity.Title);
+                        CreateImage(ref entity, ref content, finalpath);
                         CreateFile(baseDir + fileName, content);
+                        
                     }
+
 
                 }
             }
             sb.Append("</ol>");
             string content2 = htmlString.Replace("{0}", this._title).Replace("\n{1}", sb.ToString()).Replace("{3}","");
             CreateFile(baseDir + "index.htm", content2);
+        }
+        private void CreateImage(ref FeedEntity entity,ref string content, string path)
+        {
+            for (int k = 0; k < feedService.GetImageCount(ref entity); k++)
+            {
+                string txt = entity.Images[k];
+                _callback("下载图片 " + (k+1) + "/" + entity.Images.Count + " " + txt);
+                Image img = feedService.DownloadImage(ref entity, k);
+                if (img==null)
+                {
+                    _callback("下载图片 " + (k+1) + "/" + entity.Images.Count + " 失败");
+                    continue;
+                }
+                DirectoryInfo imgDir = new DirectoryInfo(path);
+                if (imgDir.Exists==false) imgDir.Create();
+                string filename="img_" + k + ".bmp";
+                
+                img.Save(path + "\\" + filename);
+
+                content = content.Replace(txt, GetFileName(entity.Title) + "\\" + filename);
+            
+            }
         }
         private void Build2()
         {

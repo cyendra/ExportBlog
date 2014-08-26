@@ -103,11 +103,11 @@ namespace ExportBlog.Service
             return entity;
         }
 
-        int GetImageCount(ref FeedEntity entity)
+        public int GetImageCount(ref FeedEntity entity)
         {
             return entity.Images.Count;
         }
-        Image DownloadImage(ref FeedEntity entity, int idx)
+        public Image DownloadImage(ref FeedEntity entity, int idx)
         {
             if (idx >= entity.Images.Count || idx < 0) return null;
             WebUtility imgWeb = new WebUtility();

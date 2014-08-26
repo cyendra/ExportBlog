@@ -44,6 +44,7 @@
             this.url_label = new System.Windows.Forms.Label();
             this.tbUrl = new System.Windows.Forms.TextBox();
             this.logBox = new System.Windows.Forms.TextBox();
+            this.save_btn = new System.Windows.Forms.Button();
             this.blog_tabControl.SuspendLayout();
             this.exTabPage.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -225,11 +226,22 @@
             this.logBox.Size = new System.Drawing.Size(640, 215);
             this.logBox.TabIndex = 7;
             // 
+            // save_btn
+            // 
+            this.save_btn.Location = new System.Drawing.Point(557, 406);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Size = new System.Drawing.Size(75, 23);
+            this.save_btn.TabIndex = 9;
+            this.save_btn.Text = "保存日志";
+            this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
+            // 
             // ExForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 441);
+            this.Controls.Add(this.save_btn);
             this.Controls.Add(this.blog_tabControl);
             this.Controls.Add(this.logBox);
             this.MaximizeBox = false;
@@ -266,6 +278,7 @@
         private System.Windows.Forms.TextBox tbColumn;
         private System.Windows.Forms.TextBox logBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button save_btn;
 
 
     }

@@ -57,8 +57,14 @@ namespace ExportBlog.Service
 
             return service.GetContent(ref entity);
         }
-      
-
+        public int GetImageCount(ref FeedEntity entity)
+        {
+            return service.GetImageCount(ref entity);
+        }
+        public Image DownloadImage(ref FeedEntity entity, int idx)
+        {
+            return service.DownloadImage(ref entity, idx);
+        }
         public FeedEntity GetEntity(string url)
         {
             if (_list == null)

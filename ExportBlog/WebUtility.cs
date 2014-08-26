@@ -53,7 +53,14 @@ namespace ExportBlog
         {
             set
             {
-                uri = new Uri(value);
+                try
+                {
+                    uri = new Uri(value);
+                }
+                catch (Exception e)
+                {
+                    uri = null;
+                }
             }
         }
         /// <summary>

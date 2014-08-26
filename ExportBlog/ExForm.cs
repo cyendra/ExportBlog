@@ -259,6 +259,26 @@ namespace ExportBlog
             }
         }
         #endregion
+
+        private void save_btn_Click(object sender, EventArgs e)
+        {
+            FolderDialog fDialog = new FolderDialog();
+            var re = fDialog.DisplayDialog();
+            if (re != DialogResult.OK) return;
+            string path = fDialog.Path + "\\";
+            CreateFile(path + "log.txt", logBox.Text);
+        }
+        Encoding encode = Encoding.GetEncoding("UTF-8");//gb18030
+        private void CreateFile(string fileName, string content)
+        {
+            FileStream fs = new FileStream(fileName, FileMode.Create);
+            using (StreamWriter writer = new StreamWriter(fs, encode))
+            {
+                writer.Write(content);
+            }
+
+            //fs.Dispose();
+        }
     }
     public class Input
     {
