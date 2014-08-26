@@ -16,12 +16,12 @@ namespace ExportBlog.Service
         public string Content { get; set; }
         public bool IsDown { get; set; }
         public string Cate { get; set; }
-        public List<Image> Images { get; set; }
+        public List<string> Images { get; set; }
         public FeedEntity()
         {
             Content = string.Empty;
             IsDown = true;
-            Images = new List<Image>();
+            Images = new List<string>();
         }
         public void Dispose()
         {

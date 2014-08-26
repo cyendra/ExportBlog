@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Drawing;
+
 namespace ExportBlog.Service
 {
     internal class CsdnService : IFeedService
@@ -74,6 +76,11 @@ namespace ExportBlog.Service
                 res = matc.Groups[1].Value.Trim();
             }
             entity.Cate = res;
+            var mats = reg_img.Matches(entity.Content);
+            foreach (Match mt in mats)
+            {
+                entity.Images.Add(mt.Groups[1].Value);
+            }
             return mat.Success;
         }
 
@@ -95,13 +102,18 @@ namespace ExportBlog.Service
             }
             return entity;
         }
-        public string GetCategory(string url)
+
+        int GetImageCount(ref FeedEntity entity)
         {
-            string res = "";
-            web.URL = url;
-            string html = web.Get();
-  
-            return res;
+            return entity.Images.Count;
+        }
+        Image DownloadImage(ref FeedEntity entity, int idx)
+        {
+            if (idx >= entity.Images.Count || idx < 0) return null;
+            WebUtility imgWeb = new WebUtility();
+            imgWeb.URL = entity.Images[idx];
+            Image img = imgWeb.GetImage();
+            return img;
         }
     }
 }

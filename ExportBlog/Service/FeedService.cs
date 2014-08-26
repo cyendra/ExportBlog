@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace ExportBlog.Service
 {
@@ -56,6 +57,7 @@ namespace ExportBlog.Service
 
             return service.GetContent(ref entity);
         }
+      
 
         public FeedEntity GetEntity(string url)
         {
